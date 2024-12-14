@@ -86,6 +86,13 @@ if [ "$MODEL_NAME" == "openvla" ]; then
 
         # 输出平均值到日志文件
         echo "Average Query Duration: $average_query_duration s ($average_query_duration_seconds seconds)" >> $LOG_FILE
+
+        if (( $(echo "$average_query_duration_seconds > 0" | bc -l) )); then
+            throughput=$(printf "%.8f" $(echo "scale=8; 1 / $average_query_duration_seconds" | bc))
+            echo "Throughput: $throughput requests/second" >> $LOG_FILE
+        else
+            echo "Throughput: Infinite (duration zero)" >> $LOG_FILE
+        fi
     done
 # 如果 MODEL_NAME 是 llava，则进行进一步的修改
 elif [ "$MODEL_NAME" == "llava" ]; then
@@ -163,10 +170,17 @@ elif [ "$MODEL_NAME" == "llava" ]; then
 
         # 输出平均值到日志文件
         echo "Average Query Duration: $average_query_duration s ($average_query_duration_seconds seconds)" >> $LOG_FILE
+
+        if (( $(echo "$average_query_duration_seconds > 0" | bc -l) )); then
+            throughput=$(printf "%.8f" $(echo "scale=8; 1 / $average_query_duration_seconds" | bc))
+            echo "Throughput: $throughput requests/second" >> $LOG_FILE
+        else
+            echo "Throughput: Infinite (duration zero)" >> $LOG_FILE
+        fi
     done
 # 如果 MODEL_NAME 是 diffusion_cnn，则进行进一步的修改
 elif [[ "$MODEL_NAME" == "diffusion_cnn" || "$MODEL_NAME" == "diffusion_transformer" ]]; then
-    for diffusion_steps in 20 40 60
+    for diffusion_steps in 20 40 60 80 100 120 140 160
     do
         # 修改每个配置文件中的 diffusion_step
         for file in "${CONFIG_FILES[@]}"
@@ -237,6 +251,13 @@ elif [[ "$MODEL_NAME" == "diffusion_cnn" || "$MODEL_NAME" == "diffusion_transfor
 
         # 输出平均值到日志文件
         echo "Average Query Duration: $average_query_duration s ($average_query_duration_seconds seconds)" >> $LOG_FILE
+
+        if (( $(echo "$average_query_duration_seconds > 0" | bc -l) )); then
+            throughput=$(printf "%.8f" $(echo "scale=8; 1 / $average_query_duration_seconds" | bc))
+            echo "Throughput: $throughput requests/second" >> $LOG_FILE
+        else
+            echo "Throughput: Infinite (duration zero)" >> $LOG_FILE
+        fi
     done
 else
     echo "Unkown model name"
