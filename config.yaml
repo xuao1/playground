@@ -16,11 +16,12 @@ mode: "parallel_v2"
 profile_mode: "flashinfer"
 verbose: 0
 
-req_interval: 0.06978000
-worker_num: 4
+req_interval: 0.06480000
+worker_num: 2
 query_interval: 1
 model: "llava"
 enable_slice: False
 
 trail_num: 20
 warmup_num: 10
+

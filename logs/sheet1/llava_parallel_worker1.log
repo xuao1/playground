@@ -1,0 +1,100 @@
+Testing with worker_num=1
+Running iteration 1 with worker_num=1...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.06984, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=1, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start LLaVa inference...
+self.n_replica:  1
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for vision generated ======
+Query latency: 7404.164 ms
+Query duration: 226.264
+Throughput: 4.420
+LLaVa inference finished.
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with worker_num=1...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.06984, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=1, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start LLaVa inference...
+self.n_replica:  1
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for vision generated ======
+Query latency: 6514.973 ms
+Query duration: 226.315
+Throughput: 4.419
+LLaVa inference finished.
+Iteration 2 completed.
+--------------------------------------
+Running iteration 3 with worker_num=1...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.06984, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=1, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start LLaVa inference...
+self.n_replica:  1
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for vision generated ======
+Query latency: 8002.961 ms
+Query duration: 226.273
+Throughput: 4.419
+LLaVa inference finished.
+Iteration 3 completed.
+--------------------------------------
+Running iteration 4 with worker_num=1...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.06984, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=1, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start LLaVa inference...
+self.n_replica:  1
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for vision generated ======
+Query latency: 8445.292 ms
+Query duration: 226.283
+Throughput: 4.419
+LLaVa inference finished.
+Iteration 4 completed.
+--------------------------------------
+Running iteration 5 with worker_num=1...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.06984, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=1, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start LLaVa inference...
+self.n_replica:  1
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for vision generated ======
+Query latency: 8378.893 ms
+Query duration: 226.277
+Throughput: 4.419
+LLaVa inference finished.
+Iteration 5 completed.
+--------------------------------------
+All iterations for worker_num=1 are complete. Output saved to llava_parallel_worker1.log.
+Average Query Duration: 226.282 ms (0.22628200 seconds)
+Throughput: 4.41926445 requests/second
+====================================

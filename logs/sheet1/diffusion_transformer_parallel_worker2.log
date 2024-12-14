@@ -1,0 +1,95 @@
+Testing with worker_num=2
+Running iteration 1 with worker_num=2...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=2, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 686.497 ms
+Query duration: 28.914
+Throughput: 34.586
+DiffusionPolicy inference finished.
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with worker_num=2...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=2, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 674.530 ms
+Query duration: 28.920
+Throughput: 34.578
+DiffusionPolicy inference finished.
+Iteration 2 completed.
+--------------------------------------
+Running iteration 3 with worker_num=2...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=2, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 658.736 ms
+Query duration: 29.000
+Throughput: 34.482
+DiffusionPolicy inference finished.
+Iteration 3 completed.
+--------------------------------------
+Running iteration 4 with worker_num=2...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=2, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 630.384 ms
+Query duration: 28.890
+Throughput: 34.613
+DiffusionPolicy inference finished.
+Iteration 4 completed.
+--------------------------------------
+Running iteration 5 with worker_num=2...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=2, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 630.475 ms
+Query duration: 29.022
+Throughput: 34.457
+DiffusionPolicy inference finished.
+Iteration 5 completed.
+--------------------------------------
+All iterations for worker_num=2 are complete. Output saved to diffusion_transformer_parallel_worker2.log.
+Average Query Duration: 28.9492 ms (0.02894920 seconds)
+Throughput: 34.54326889 requests/second
+====================================

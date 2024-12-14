@@ -4,7 +4,7 @@ prefill_n: 1
 decode_n: 1
 encoder_len: 1
 prefill_len: 1
-decode_len: 6
+decode_len: 10
 
 # For DiffusionPolicy
 diffusion_step: 100
@@ -16,10 +16,10 @@ mode: "parallel_v2"
 profile_mode: "flashinfer"
 verbose: 0
 
-req_interval: 0.05840000
-worker_num: 3
+req_interval: 0.01272000
+worker_num: 16
 query_interval: 1
-model: "openvla"
+model: "diffusion_transformer"
 enable_slice: False
 
 trail_num: 20

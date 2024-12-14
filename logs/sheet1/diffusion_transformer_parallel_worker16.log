@@ -1,0 +1,165 @@
+Testing with worker_num=16
+Running iteration 1 with worker_num=16...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=16, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 62.619 ms
+Query duration: 14.673
+Throughput: 68.153
+DiffusionPolicy inference finished.
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with worker_num=16...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=16, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 61.686 ms
+Query duration: 14.526
+Throughput: 68.844
+DiffusionPolicy inference finished.
+Iteration 2 completed.
+--------------------------------------
+Running iteration 3 with worker_num=16...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=16, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 61.669 ms
+Query duration: 14.523
+Throughput: 68.854
+DiffusionPolicy inference finished.
+Iteration 3 completed.
+--------------------------------------
+Running iteration 4 with worker_num=16...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=16, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 62.043 ms
+Query duration: 14.587
+Throughput: 68.555
+DiffusionPolicy inference finished.
+Iteration 4 completed.
+--------------------------------------
+Running iteration 5 with worker_num=16...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='parallel_v2', req_interval=0.01272, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=16, verbose=0, config='./config_parallel.yaml', diffusion_step=100, diffusion_stage_num=5)
+Start DiffusionPolicy inference...
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Query latency: 63.628 ms
+Query duration: 14.944
+Throughput: 66.918
+DiffusionPolicy inference finished.
+Iteration 5 completed.
+--------------------------------------
+All iterations for worker_num=16 are complete. Output saved to diffusion_transformer_parallel_worker16.log.
+Average Query Duration: 14.6506 ms (0.01465060 seconds)
+Throughput: 68.25659017 requests/second
+====================================

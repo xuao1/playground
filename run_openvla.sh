@@ -98,8 +98,8 @@ LOG_FILE="${MODEL_NAME}_parallel.log"
 CONFIG_FILE="./config_parallel.yaml"
 
 # 定义 worker_num 的范围
-# for worker_num in 1 2 3 4 8 16
-for worker_num in {1..3}
+for worker_num in 1 2 3 4 8 16
+# for worker_num in {1..3}
 do
     LOG_FILE="${MODEL_NAME}_parallel_worker${worker_num}.log"
 
