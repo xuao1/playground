@@ -4,7 +4,7 @@ prefill_n: 1
 decode_n: 1
 encoder_len: 1
 prefill_len: 1
-decode_len: 10
+decode_len: 6
 
 # For DiffusionPolicy
 diffusion_step: 100

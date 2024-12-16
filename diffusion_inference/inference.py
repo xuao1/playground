@@ -34,6 +34,7 @@ class Diffusion_engine:
                  model_type='transformer'):
         self.idx = idx
 
+        args.diffusion_step = int(args.generation_scale * args.diffusion_step)
         # prepare caches for tensors
         if args.mode == 'seq':
             args.diffusion_stage_num = 1
@@ -41,14 +42,17 @@ class Diffusion_engine:
         self.n_replica = args.diffusion_stage_num
         if args.mode == 'parallel_v2':
             self.n_replica = args.worker_num
-        img = [torch.randn(2, 3, 96, 96).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
+        
+        obs_num = 2
+        # assert args.input_img_num*obs_num*args.perception_scale%1 == 0, "DiffusionPolicy Perception scaling warning"
+        img = [torch.randn(int(args.input_img_num*obs_num*args.perception_scale), 3, args.input_img_size, args.input_img_size).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
         if model_type == 'transformer':
-            trajectory = [torch.randn(1, 10, 2).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
-            cond = [torch.randn(1, 2, 66).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
+            trajectory = [torch.randn(1, args.input_traj_transformer_size, args.input_dim).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
+            cond = [torch.randn(1, obs_num, args.cond_dim).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
         elif model_type == 'cnn':
-            trajectory = [torch.randn(1, 16, 2).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
-            cond = [torch.randn(1, 132).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]     
-        timestep = [torch.tensor([0], dtype=torch.long, device="cuda") for i in range(self.n_replica)]
+            trajectory = [torch.randn(1, args.input_traj_cnn_size, args.input_dim).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]
+            cond = [torch.randn(1, obs_num*args.cond_dim).to(torch.bfloat16).to("cuda") for i in range(self.n_replica)]     
+        timestep = [torch.tensor(0, dtype=torch.long, device="cuda") for i in range(self.n_replica)]
         self.caches = { 'img': img,
                         'trajectory': trajectory,
                         'timestep': timestep,
@@ -57,9 +61,20 @@ class Diffusion_engine:
         # prepare models
         resnet = models.resnet18().to(torch.bfloat16).to("cuda")
         if model_type == 'transformer':
-            backbone = DiffusionTransformer().to(torch.bfloat16).to("cuda")
+            backbone = DiffusionTransformer(
+                input_dim=args.input_dim,
+                output_dim=args.input_dim,
+                cond_dim=args.cond_dim,
+                n_emb=args.n_emb
+            ).to(torch.bfloat16).to("cuda")
         elif model_type == 'cnn':
-            backbone = DiffusionCNN().to(torch.bfloat16).to("cuda")
+            backbone = DiffusionCNN(
+                input_dim=args.input_dim,
+                global_cond_dim=args.global_cond_dim
+            ).to(torch.bfloat16).to("cuda")
+        
+        print("Perception params: %e" % sum(p.numel() for p in resnet.parameters()))
+        print("Generation params: %e" % sum(p.numel() for p in backbone.parameters()))
 
         self.models = {'resnet': resnet,
                        'backbone': backbone}
