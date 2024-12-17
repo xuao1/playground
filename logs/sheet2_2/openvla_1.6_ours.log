@@ -1,0 +1,453 @@
+Running iteration 1 with 1.6...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=1.6, generation_scale=1.6)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 1.140037e+09
+Generation params: 8.994062e+09
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 317, in <module>
+    profile_data = openvla_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 527, in openvla_run
+    e = OpenVLA_engine()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 77, in __init__
+    self.generate_cuda_graphs()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 123, in generate_cuda_graphs
+    self.vit1_out[graph_id] = self.models['vit1'](self.caches['img'][graph_id])
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/openvla_inference/encoder/dinov2.py", line 35, in forward
+    x = self.encoder(x, return_embeddings=True, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1565, in forward
+    embed = self.attn_layers(x, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1406, in forward
+    out = block(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 663, in forward
+    return self.ff(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/activation.py", line 734, in forward
+    return F.gelu(input, approximate=self.approximate)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 23.64 GiB of which 12.25 MiB is free. Process 3667773 has 23.61 GiB memory in use. Of the allocated memory 22.82 GiB is allocated by PyTorch, with 359.37 MiB allocated in private pools (e.g., CUDA Graphs), and 296.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with 1.6...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=1.6, generation_scale=1.6)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 1.140037e+09
+Generation params: 8.994062e+09
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 317, in <module>
+    profile_data = openvla_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 527, in openvla_run
+    e = OpenVLA_engine()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 77, in __init__
+    self.generate_cuda_graphs()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 123, in generate_cuda_graphs
+    self.vit1_out[graph_id] = self.models['vit1'](self.caches['img'][graph_id])
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/openvla_inference/encoder/dinov2.py", line 35, in forward
+    x = self.encoder(x, return_embeddings=True, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1565, in forward
+    embed = self.attn_layers(x, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1406, in forward
+    out = block(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 663, in forward
+    return self.ff(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/activation.py", line 734, in forward
+    return F.gelu(input, approximate=self.approximate)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 23.64 GiB of which 12.25 MiB is free. Process 3669357 has 23.61 GiB memory in use. Of the allocated memory 22.82 GiB is allocated by PyTorch, with 359.37 MiB allocated in private pools (e.g., CUDA Graphs), and 296.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 2 completed.
+--------------------------------------
+Running iteration 3 with 1.6...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=1.6, generation_scale=1.6)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 1.140037e+09
+Generation params: 8.994062e+09
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 317, in <module>
+    profile_data = openvla_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 527, in openvla_run
+    e = OpenVLA_engine()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 77, in __init__
+    self.generate_cuda_graphs()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 123, in generate_cuda_graphs
+    self.vit1_out[graph_id] = self.models['vit1'](self.caches['img'][graph_id])
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/openvla_inference/encoder/dinov2.py", line 35, in forward
+    x = self.encoder(x, return_embeddings=True, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1565, in forward
+    embed = self.attn_layers(x, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1406, in forward
+    out = block(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 663, in forward
+    return self.ff(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/activation.py", line 734, in forward
+    return F.gelu(input, approximate=self.approximate)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 23.64 GiB of which 12.25 MiB is free. Process 3671001 has 23.61 GiB memory in use. Of the allocated memory 22.82 GiB is allocated by PyTorch, with 359.37 MiB allocated in private pools (e.g., CUDA Graphs), and 296.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 3 completed.
+--------------------------------------
+Running iteration 4 with 1.6...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=1.6, generation_scale=1.6)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 1.140037e+09
+Generation params: 8.994062e+09
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 317, in <module>
+    profile_data = openvla_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 527, in openvla_run
+    e = OpenVLA_engine()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 77, in __init__
+    self.generate_cuda_graphs()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 123, in generate_cuda_graphs
+    self.vit1_out[graph_id] = self.models['vit1'](self.caches['img'][graph_id])
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/openvla_inference/encoder/dinov2.py", line 35, in forward
+    x = self.encoder(x, return_embeddings=True, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1565, in forward
+    embed = self.attn_layers(x, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1406, in forward
+    out = block(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 663, in forward
+    return self.ff(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/activation.py", line 734, in forward
+    return F.gelu(input, approximate=self.approximate)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 23.64 GiB of which 12.25 MiB is free. Process 3672665 has 23.61 GiB memory in use. Of the allocated memory 22.82 GiB is allocated by PyTorch, with 359.37 MiB allocated in private pools (e.g., CUDA Graphs), and 296.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 4 completed.
+--------------------------------------
+Running iteration 5 with 1.6...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=1.6, generation_scale=1.6)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 1.140037e+09
+Generation params: 8.994062e+09
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 317, in <module>
+    profile_data = openvla_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 527, in openvla_run
+    e = OpenVLA_engine()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 77, in __init__
+    self.generate_cuda_graphs()
+  File "/workspace/xformers/playground/openvla_inference/inference.py", line 123, in generate_cuda_graphs
+    self.vit1_out[graph_id] = self.models['vit1'](self.caches['img'][graph_id])
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/openvla_inference/encoder/dinov2.py", line 35, in forward
+    x = self.encoder(x, return_embeddings=True, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1565, in forward
+    embed = self.attn_layers(x, slice_num=slice_num, slice_id=slice_id)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 1406, in forward
+    out = block(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py", line 663, in forward
+    return self.ff(x)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/activation.py", line 734, in forward
+    return F.gelu(input, approximate=self.approximate)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 23.64 GiB of which 12.25 MiB is free. Process 3674274 has 23.61 GiB memory in use. Of the allocated memory 22.82 GiB is allocated by PyTorch, with 359.37 MiB allocated in private pools (e.g., CUDA Graphs), and 296.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 5 completed.
+--------------------------------------
+All iterations are complete. Output saved to openvla_1.6_ours.log.
+Average Query Duration: -nan s (0.00000000 seconds)
+Throughput: Infinite (duration zero)
