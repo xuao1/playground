@@ -1,0 +1,88 @@
+Running iteration 1 with 20 diffusion steps...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='diffusion_cnn', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=20, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=1.0, generation_scale=1.0)
+Start DiffusionPolicy inference...
+data_type:  torch.bfloat16
+Perception params: 1.168951e+07
+Generation params: 2.635040e+08
+====== Graph for resnet generated ======
+====== Graph for backbone generated ======
+Query duration: 67.92 ms
+Throughput: 14.724
+DiffusionPolicy inference finished.
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with 20 diffusion steps...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='diffusion_cnn', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=20, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=1.0, generation_scale=1.0)
+Start DiffusionPolicy inference...
+data_type:  torch.bfloat16
+Perception params: 1.168951e+07
+Generation params: 2.635040e+08
+====== Graph for resnet generated ======
+====== Graph for backbone generated ======
+Query duration: 67.91 ms
+Throughput: 14.726
+DiffusionPolicy inference finished.
+Iteration 2 completed.
+--------------------------------------
+Running iteration 3 with 20 diffusion steps...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='diffusion_cnn', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=20, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=1.0, generation_scale=1.0)
+Start DiffusionPolicy inference...
+data_type:  torch.bfloat16
+Perception params: 1.168951e+07
+Generation params: 2.635040e+08
+====== Graph for resnet generated ======
+====== Graph for backbone generated ======
+Query duration: 67.91 ms
+Throughput: 14.725
+DiffusionPolicy inference finished.
+Iteration 3 completed.
+--------------------------------------
+Running iteration 4 with 20 diffusion steps...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='diffusion_cnn', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=20, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=1.0, generation_scale=1.0)
+Start DiffusionPolicy inference...
+data_type:  torch.bfloat16
+Perception params: 1.168951e+07
+Generation params: 2.635040e+08
+====== Graph for resnet generated ======
+====== Graph for backbone generated ======
+Query duration: 68.04 ms
+Throughput: 14.697
+DiffusionPolicy inference finished.
+Iteration 4 completed.
+--------------------------------------
+Running iteration 5 with 20 diffusion steps...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='diffusion_cnn', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=20, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=1.0, generation_scale=1.0)
+Start DiffusionPolicy inference...
+data_type:  torch.bfloat16
+Perception params: 1.168951e+07
+Generation params: 2.635040e+08
+====== Graph for resnet generated ======
+====== Graph for backbone generated ======
+Query duration: 67.95 ms
+Throughput: 14.716
+DiffusionPolicy inference finished.
+Iteration 5 completed.
+--------------------------------------
+All iterations are complete. Output saved to diffusion_cnn_20_seq.log.
+Average Query Duration: 67.946 ms (0.06794600 seconds)
+Throughput: 14.71756983 requests/second
