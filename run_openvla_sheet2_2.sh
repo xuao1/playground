@@ -10,6 +10,56 @@ MODEL_NAME="$1"
 
 CONFIG_FILES=("config_seq.yaml" "config_ours.yaml")
 
+if [ "$MODEL_NAME" == "openvla" ]; then
+    # 循环遍历每个配置文件，并修改 decode_len
+    for file in "${CONFIG_FILES[@]}"
+    do
+    if [ -f "$file" ]; then
+        sed -i "s/decode_len: [0-9]\+/decode_len: 6/" $file
+        echo "Updated decode_len to 6 in $file"
+    else
+        echo "Warning: $file not found, cannot update decode_len."
+    fi
+    done
+elif [ "$MODEL_NAME" == "llava" ]; then
+    # 循环遍历每个配置文件，并修改 decode_len
+    for file in "${CONFIG_FILES[@]}"
+    do
+    if [ -f "$file" ]; then
+        sed -i "s/decode_len: [0-9]\+/decode_len: 10/" $file
+        echo "Updated decode_len to 10 in $file"
+    else
+        echo "Warning: $file not found, cannot update decode_len."
+    fi
+    done
+elif [ "$MODEL_NAME" == "diffusion_cnn" ]; then
+    # 循环遍历每个配置文件，并修改 diffusion_step 为 16
+    for file in "${CONFIG_FILES[@]}"
+    do
+    if [ -f "$file" ]; then
+        sed -i "s/diffusion_step: [0-9]\+/diffusion_step: 16/" $file
+        sed -i "s/diffusion_stage_num: [0-9]\+/diffusion_stage_num: 4/" $file
+        echo "Updated diffusion_step to 16 in $file"
+    else
+        echo "Warning: $file not found, cannot update diffusion_step."
+    fi
+    done
+elif [ "$MODEL_NAME" == "diffusion_transformer" ]; then
+    # 循环遍历每个配置文件，并修改 diffusion_step 为 16
+    for file in "${CONFIG_FILES[@]}"
+    do
+    if [ -f "$file" ]; then
+        sed -i "s/diffusion_step: [0-9]\+/diffusion_step: 100/" $file
+        sed -i "s/diffusion_stage_num: [0-9]\+/diffusion_stage_num: 5/" $file
+        echo "Updated diffusion_step to 100 in $file"
+    else
+        echo "Warning: $file not found, cannot update diffusion_step."
+    fi
+    done
+else
+    echo "Unknown model: $MODEL_NAME. No modifications were made."
+fi
+
 # 如果 MODEL_NAME 是 openvla，则进行进一步的修改
 if [ "$MODEL_NAME" == "openvla" ]; then
     for scaling in 0.4 0.6 0.8 1.0 1.2 1.4 1.6
