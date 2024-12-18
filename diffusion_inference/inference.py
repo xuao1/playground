@@ -139,7 +139,7 @@ class Diffusion_engine:
         with torch.cuda.stream(self.streams[0]):
             self.run_V_cuda_graphs(num_trails=1, required_sync=False)
         with torch.cuda.stream(self.streams[1]):
-            self.run_L_cuda_graphs(num_trails=1, diffusion_step=args.diffusion_step//args.diffusion_stage_num, required_sync=False)
+            self.run_L_cuda_graphs(num_trails=1, diffusion_step=round(args.diffusion_step / args.diffusion_stage_num), required_sync=False)
 
 
 
@@ -150,7 +150,7 @@ class Diffusion_engine:
 
         with torch.cuda.stream(self.streams[stream_id]):
             self.run_V_cuda_graphs(num_trails=1, required_sync=False)
-            self.run_L_cuda_graphs(num_trails=1, diffusion_step=args.diffusion_step//args.diffusion_stage_num, required_sync=False)
+            self.run_L_cuda_graphs(num_trails=1, diffusion_step=round(args.diffusion_step / args.diffusion_stage_num), required_sync=False)
         
         self.streams[stream_id].synchronize()
         duration = time.time() - req_start
@@ -306,12 +306,12 @@ class Diffusion_engine:
                 # for j, graph_name in enumerate(self.graphs['backbone']):
                 #     stream = self.streams[j+1]
                 #     with torch.cuda.stream(stream):
-                #         for diffusion_step in range(args.diffusion_step // args.diffusion_stage_num):
+                #         for diffusion_step in range(round(args.diffusion_step / args.diffusion_stage_num)):
                 #             self.graphs['backbone'][j].replay()
                 #     backbone_streams.append(stream)
 
                 # iteration-first graph launching
-                for diffusion_step in range(args.diffusion_step // args.diffusion_stage_num):
+                for diffusion_step in range(round(args.diffusion_step / args.diffusion_stage_num)):
                     for j, graph_name in enumerate(self.graphs['backbone']):
                         stream = self.streams[j+1]
                         with torch.cuda.stream(stream):
