@@ -45,9 +45,9 @@ Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Duration of graphs:  22.322175979614258
-Frame interval: 0.0223 s
-Throughput: 44.902
+Duration of graphs:  22.036479949951172
+Frame interval: 0.0221 s
+Throughput: 45.205
 DiffusionPolicy inference finished.
 Iteration 1 completed.
 --------------------------------------
@@ -98,9 +98,9 @@ Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Duration of graphs:  22.13580894470215
-Frame interval: 0.0224 s
-Throughput: 44.654
+Duration of graphs:  22.1375675201416
+Frame interval: 0.0221 s
+Throughput: 45.168
 DiffusionPolicy inference finished.
 Iteration 2 completed.
 --------------------------------------
@@ -151,9 +151,9 @@ Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Duration of graphs:  22.127456665039062
-Frame interval: 0.0221 s
-Throughput: 45.202
+Duration of graphs:  22.14499282836914
+Frame interval: 0.0222 s
+Throughput: 45.131
 DiffusionPolicy inference finished.
 Iteration 3 completed.
 --------------------------------------
@@ -204,9 +204,9 @@ Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Duration of graphs:  22.116352081298828
-Frame interval: 0.0221 s
-Throughput: 45.233
+Duration of graphs:  22.206464767456055
+Frame interval: 0.0223 s
+Throughput: 44.915
 DiffusionPolicy inference finished.
 Iteration 4 completed.
 --------------------------------------
@@ -257,12 +257,12 @@ Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Duration of graphs:  22.100128173828125
+Duration of graphs:  22.09075164794922
 Frame interval: 0.0221 s
-Throughput: 45.197
+Throughput: 45.219
 DiffusionPolicy inference finished.
 Iteration 5 completed.
 --------------------------------------
 All iterations are complete. Output saved to diffusion_transformer_perception_1_0_generation_1_0_ours.log.
-Average Query Duration: 0.0222 s (0.02220000 seconds)
-Throughput: 45.04504504 requests/second
+Average Query Duration: 0.02216 s (0.02216000 seconds)
+Throughput: 45.12635379 requests/second

@@ -11,8 +11,8 @@ Generation params: 8.059087e+07
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Query duration: 107.44 ms
-Throughput: 9.308
+Query duration: 78.00 ms
+Throughput: 12.821
 DiffusionPolicy inference finished.
 Iteration 1 completed.
 --------------------------------------
@@ -29,8 +29,8 @@ Generation params: 8.059087e+07
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Query duration: 78.10 ms
-Throughput: 12.805
+Query duration: 78.12 ms
+Throughput: 12.800
 DiffusionPolicy inference finished.
 Iteration 2 completed.
 --------------------------------------
@@ -47,8 +47,8 @@ Generation params: 8.059087e+07
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Query duration: 78.03 ms
-Throughput: 12.816
+Query duration: 78.04 ms
+Throughput: 12.814
 DiffusionPolicy inference finished.
 Iteration 3 completed.
 --------------------------------------
@@ -65,8 +65,8 @@ Generation params: 8.059087e+07
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Query duration: 78.04 ms
-Throughput: 12.814
+Query duration: 78.10 ms
+Throughput: 12.804
 DiffusionPolicy inference finished.
 Iteration 4 completed.
 --------------------------------------
@@ -83,11 +83,11 @@ Generation params: 8.059087e+07
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
 ====== Graph for backbone generated ======
-Query duration: 78.08 ms
-Throughput: 12.807
+Query duration: 78.10 ms
+Throughput: 12.804
 DiffusionPolicy inference finished.
 Iteration 5 completed.
 --------------------------------------
 All iterations are complete. Output saved to diffusion_transformer_perception_1_0_generation_1_0_seq.log.
-Average Query Duration: 83.938 ms (0.08393800 seconds)
-Throughput: 11.91355524 requests/second
+Average Query Duration: 78.072 ms (0.07807200 seconds)
+Throughput: 12.80868941 requests/second
