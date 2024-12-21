@@ -33,13 +33,13 @@ elif [ "$MODEL_NAME" == "llava" ]; then
     fi
     done
 elif [ "$MODEL_NAME" == "diffusion_cnn" ]; then
-    # 循环遍历每个配置文件，并修改 diffusion_step 为 20
+    # 循环遍历每个配置文件，并修改 diffusion_step 为 40
     for file in "${CONFIG_FILES[@]}"
     do
     if [ -f "$file" ]; then
-        sed -i "s/diffusion_step: [0-9]\+/diffusion_step: 20/" $file
-        sed -i "s/diffusion_stage_num: [0-9]\+/diffusion_stage_num: 4/" $file
-        echo "Updated diffusion_step to 20 in $file"
+        sed -i "s/diffusion_step: [0-9]\+/diffusion_step: 40/" $file
+        sed -i "s/diffusion_stage_num: [0-9]\+/diffusion_stage_num: 5/" $file
+        echo "Updated diffusion_step to 40 in $file"
     else
         echo "Warning: $file not found, cannot update diffusion_step."
     fi
