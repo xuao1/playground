@@ -61,15 +61,18 @@ else
 fi
 
 # 定义 scale 组合
-declare -a SCALE_OPTIONS=(
-    "1.0 1.0"
-    "4.0 1.0"
-    "3.0 1.0"
-    "2.0 1.0"
-    "1.0 2.0"
-    "1.0 3.0"
-    "1.0 4.0"
-)
+declare -a NEW_SCALE_VALUES=(0.0625 0.25 1.0 4.0 16.0)
+declare -a SCALE_OPTIONS=()
+for i in "${NEW_SCALE_VALUES[@]}"; do
+    for j in "${NEW_SCALE_VALUES[@]}"; do
+        SCALE_OPTIONS+=("$i $j")
+    done
+done
+
+# for scale in "${SCALE_OPTIONS[@]}"; do
+#     echo "$scale"
+# done
+
 
 # 如果 MODEL_NAME 是 openvla，则进行进一步的修改
 if [ "$MODEL_NAME" == "openvla" ]; then
@@ -84,8 +87,8 @@ if [ "$MODEL_NAME" == "openvla" ]; then
         for file in "${CONFIG_FILES[@]}"
         do
             if [ -f "$file" ]; then
-                sed -i "s/perception_scale: [0-9]\+\.[0-9]\+/perception_scale: $perception_scale/" $file
-                sed -i "s/generation_scale: [0-9]\+\.[0-9]\+/generation_scale: $generation_scale/" $file
+                sed -i "s/perception_scale: [0-9]\+\(\.[0-9]\+\)\?/perception_scale: $perception_scale/" $file
+                sed -i "s/generation_scale: [0-9]\+\(\.[0-9]\+\)\?/generation_scale: $generation_scale/" $file
                 echo "Updated perception_scale to '$perception_scale' and generation_scale to '$generation_scale' in $file"
             else
                 echo "Warning: $file not found, cannot update scales."
@@ -107,7 +110,7 @@ if [ "$MODEL_NAME" == "openvla" ]; then
         LOG_FILE="${MODEL_NAME}_perception_${perception_filename}_generation_${generation_filename}_seq.log"
         
         # 串行运行 5 次命令 (Seq 部分)
-        for i in {1..5}
+        for i in {1..2}
         do
             echo "Running iteration $i with perception_scale $perception_scale and generation_scale $generation_scale..." >> $LOG_FILE
             python sche_plan.py --config ./config_seq.yaml >> $LOG_FILE 2>&1
@@ -134,7 +137,7 @@ if [ "$MODEL_NAME" == "openvla" ]; then
         # Ours 运行 5 次命令 (Ours 部分)
         LOG_FILE="${MODEL_NAME}_perception_${perception_filename}_generation_${generation_filename}_ours.log"
 
-        for i in {1..5}
+        for i in {1..2}
         do
         echo "Running iteration $i with perception_scale $perception_scale and generation_scale $generation_scale..." >> $LOG_FILE
         python sche_plan.py --config ./config_ours.yaml >> $LOG_FILE 2>&1
@@ -171,8 +174,8 @@ elif [ "$MODEL_NAME" == "llava" ]; then
         for file in "${CONFIG_FILES[@]}"
         do
             if [ -f "$file" ]; then
-                sed -i "s/perception_scale: [0-9]\+\.[0-9]\+/perception_scale: $perception_scale/" $file
-                sed -i "s/generation_scale: [0-9]\+\.[0-9]\+/generation_scale: $generation_scale/" $file
+                sed -i "s/perception_scale: [0-9]\+\(\.[0-9]\+\)\?/perception_scale: $perception_scale/" $file
+                sed -i "s/generation_scale: [0-9]\+\(\.[0-9]\+\)\?/generation_scale: $generation_scale/" $file
                 echo "Updated perception_scale to '$perception_scale' and generation_scale to '$generation_scale' in $file"
             else
                 echo "Warning: $file not found, cannot update scales."
@@ -194,7 +197,7 @@ elif [ "$MODEL_NAME" == "llava" ]; then
         LOG_FILE="${MODEL_NAME}_perception_${perception_filename}_generation_${generation_filename}_seq.log"
         
         # 串行运行 5 次命令 (Seq 部分)
-        for i in {1..5}
+        for i in {1..2}
         do
         echo "Running iteration $i with perception_scale $perception_scale and generation_scale $generation_scale..." >> $LOG_FILE
         python sche_plan.py --config ./config_seq.yaml >> $LOG_FILE 2>&1
@@ -221,7 +224,7 @@ elif [ "$MODEL_NAME" == "llava" ]; then
         # Ours 运行 5 次命令 (Ours 部分)
         LOG_FILE="${MODEL_NAME}_perception_${perception_filename}_generation_${generation_filename}_ours.log"
 
-        for i in {1..5}
+        for i in {1..2}
         do
         echo "Running iteration $i with perception_scale $perception_scale and generation_scale $generation_scale..." >> $LOG_FILE
         python sche_plan.py --config ./config_ours.yaml >> $LOG_FILE 2>&1
@@ -258,8 +261,8 @@ elif [[ "$MODEL_NAME" == "diffusion_cnn" || "$MODEL_NAME" == "diffusion_transfor
         for file in "${CONFIG_FILES[@]}"
         do
             if [ -f "$file" ]; then
-                sed -i "s/perception_scale: [0-9]\+\.[0-9]\+/perception_scale: $perception_scale/" $file
-                sed -i "s/generation_scale: [0-9]\+\.[0-9]\+/generation_scale: $generation_scale/" $file
+                sed -i "s/perception_scale: [0-9]\+\(\.[0-9]\+\)\?/perception_scale: $perception_scale/" $file
+                sed -i "s/generation_scale: [0-9]\+\(\.[0-9]\+\)\?/generation_scale: $generation_scale/" $file
                 echo "Updated perception_scale to '$perception_scale' and generation_scale to '$generation_scale' in $file"
             else
                 echo "Warning: $file not found, cannot update scales."
@@ -281,7 +284,7 @@ elif [[ "$MODEL_NAME" == "diffusion_cnn" || "$MODEL_NAME" == "diffusion_transfor
         LOG_FILE="${MODEL_NAME}_perception_${perception_filename}_generation_${generation_filename}_seq.log"
         
         # 串行运行 5 次命令 (Seq 部分)
-        for i in {1..5}
+        for i in {1..2}
         do
         echo "Running iteration $i with perception_scale $perception_scale and generation_scale $generation_scale..." >> $LOG_FILE
         python sche_plan.py --config ./config_seq.yaml >> $LOG_FILE 2>&1
@@ -308,7 +311,7 @@ elif [[ "$MODEL_NAME" == "diffusion_cnn" || "$MODEL_NAME" == "diffusion_transfor
         # Ours 运行 5 次命令 (Ours 部分)
         LOG_FILE="${MODEL_NAME}_perception_${perception_filename}_generation_${generation_filename}_ours.log"
 
-        for i in {1..5}
+        for i in {1..2}
         do
         echo "Running iteration $i with perception_scale $perception_scale and generation_scale $generation_scale..." >> $LOG_FILE
         python sche_plan.py --config ./config_ours.yaml >> $LOG_FILE 2>&1

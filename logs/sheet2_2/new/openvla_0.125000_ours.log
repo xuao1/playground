@@ -1,0 +1,223 @@
+Running iteration 1 with 0.125000...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=40, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.125, generation_scale=0.125)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 8.564495e+07
+Generation params: 7.131587e+08
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for DINOv2 generated ======
+====== Graph for SigLIP generated ======
+Duration of graphs:  [6.746111869812012, 2.085887908935547, 2.151423931121826]
+Frame interval: 0.0068 s
+Throughput: 147.08
+OpenVLA inference finished.
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with 0.125000...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=40, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.125, generation_scale=0.125)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 8.564495e+07
+Generation params: 7.131587e+08
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for DINOv2 generated ======
+====== Graph for SigLIP generated ======
+Duration of graphs:  [6.791168212890625, 2.136064052581787, 2.075648069381714]
+Frame interval: 0.0067 s
+Throughput: 150.22
+OpenVLA inference finished.
+Iteration 2 completed.
+--------------------------------------
+Running iteration 3 with 0.125000...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=40, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.125, generation_scale=0.125)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 8.564495e+07
+Generation params: 7.131587e+08
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for DINOv2 generated ======
+====== Graph for SigLIP generated ======
+Duration of graphs:  [6.769504070281982, 2.091007947921753, 2.144256114959717]
+Frame interval: 0.0067 s
+Throughput: 150.03
+OpenVLA inference finished.
+Iteration 3 completed.
+--------------------------------------
+Running iteration 4 with 0.125000...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=40, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.125, generation_scale=0.125)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 8.564495e+07
+Generation params: 7.131587e+08
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for DINOv2 generated ======
+====== Graph for SigLIP generated ======
+Duration of graphs:  [6.768608093261719, 2.096127986907959, 2.1821439266204834]
+Frame interval: 0.0067 s
+Throughput: 148.74
+OpenVLA inference finished.
+Iteration 4 completed.
+--------------------------------------
+Running iteration 5 with 0.125000...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/usr/lib/python3.10/contextlib.py:103: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=6, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='openvla', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=40, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.125, generation_scale=0.125)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 493
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd']
+8
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 493
+Start OpenVLA inference...
+self.n_replica:  1
+Perception params: 8.564495e+07
+Generation params: 7.131587e+08
+====== Graph for prefill generated ======
+====== Graph for decode generated ======
+====== Graph for DINOv2 generated ======
+====== Graph for SigLIP generated ======
+Duration of graphs:  [6.767615795135498, 2.2425599098205566, 2.150399923324585]
+Frame interval: 0.0067 s
+Throughput: 148.52
+OpenVLA inference finished.
+Iteration 5 completed.
+--------------------------------------
+All iterations are complete. Output saved to openvla_0.125000_ours.log.
+Average Query Duration: 0.00672 s (0.00672000 seconds)
+Throughput: 148.80952380 requests/second

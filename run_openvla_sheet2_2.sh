@@ -62,14 +62,17 @@ fi
 
 # 如果 MODEL_NAME 是 openvla，则进行进一步的修改
 if [ "$MODEL_NAME" == "openvla" ]; then
-    for scaling in 0.4 0.6 0.8 1.0 1.2 1.4 1.6
+    for ((ii=-5; ii<=6; ii++)); 
     do
+        scaling=$(awk "BEGIN {x = 2^$ii; if (x < 1) printf \"%f\", x; else printf \"%.1f\", x;}")  # 计算 2 的 ii 次方并格式化为浮点数
+        echo "scaling is $scaling"
+
         # 循环遍历每个配置文件，并修改 perception_scale
         for file in "${CONFIG_FILES[@]}"
         do
         if [ -f "$file" ]; then
-            sed -i "s/perception_scale: [0-9]\+\.[0-9]\+/perception_scale: $scaling/" $file
-            sed -i "s/generation_scale: [0-9]\+\.[0-9]\+/generation_scale: $scaling/" $file
+            sed -i "s/perception_scale: [0-9]\+\(\.[0-9]\+\)\?/perception_scale: $scaling/" $file
+            sed -i "s/generation_scale: [0-9]\+\(\.[0-9]\+\)\?/generation_scale: $scaling/" $file
             echo "Updated perception_scale to '$scaling' in $file"
         else
             echo "Warning: $file not found, cannot update scaling."
@@ -144,14 +147,16 @@ if [ "$MODEL_NAME" == "openvla" ]; then
     done
 # 如果 MODEL_NAME 是 llava，则进行进一步的修改
 elif [ "$MODEL_NAME" == "llava" ]; then
-    for scaling in 0.4 0.6 0.8 1.0 1.2 1.4 1.6
+    for ((ii=-5; ii<=6; ii++)); 
     do
+        scaling=$(awk "BEGIN {x = 2^$ii; if (x < 1) printf \"%f\", x; else printf \"%.1f\", x;}")  # 计算 2 的 ii 次方并格式化为浮点数
+        echo "scaling is $scaling"
         # 循环遍历每个配置文件，并修改 perception_scale
         for file in "${CONFIG_FILES[@]}"
         do
         if [ -f "$file" ]; then
-            sed -i "s/perception_scale: [0-9]\+\.[0-9]\+/perception_scale: $scaling/" $file
-            sed -i "s/generation_scale: [0-9]\+\.[0-9]\+/generation_scale: $scaling/" $file
+            sed -i "s/perception_scale: [0-9]\+\(\.[0-9]\+\)\?/perception_scale: $scaling/" $file
+            sed -i "s/generation_scale: [0-9]\+\(\.[0-9]\+\)\?/generation_scale: $scaling/" $file
             echo "Updated perception_scale to '$scaling' in $file"
         else
             echo "Warning: $file not found, cannot update scaling."
@@ -226,14 +231,16 @@ elif [ "$MODEL_NAME" == "llava" ]; then
     done
 # 如果 MODEL_NAME 是 diffusion_cnn，则进行进一步的修改
 elif [[ "$MODEL_NAME" == "diffusion_cnn" || "$MODEL_NAME" == "diffusion_transformer" ]]; then
-    for scaling in 0.4 0.6 0.8 1.0 1.2 1.4 1.6
+    for ((ii=-5; ii<=6; ii++)); 
     do
+        scaling=$(awk "BEGIN {x = 2^$ii; if (x < 1) printf \"%f\", x; else printf \"%.1f\", x;}")  # 计算 2 的 ii 次方并格式化为浮点数
+        echo "scaling is $scaling"
         # 循环遍历每个配置文件，并修改 perception_scale
         for file in "${CONFIG_FILES[@]}"
         do
         if [ -f "$file" ]; then
-            sed -i "s/perception_scale: [0-9]\+\.[0-9]\+/perception_scale: $scaling/" $file
-            sed -i "s/generation_scale: [0-9]\+\.[0-9]\+/generation_scale: $scaling/" $file
+            sed -i "s/perception_scale: [0-9]\+\(\.[0-9]\+\)\?/perception_scale: $scaling/" $file
+            sed -i "s/generation_scale: [0-9]\+\(\.[0-9]\+\)\?/generation_scale: $scaling/" $file
             echo "Updated perception_scale to '$scaling' in $file"
         else
             echo "Warning: $file not found, cannot update scaling."

@@ -1,0 +1,65 @@
+Running iteration 1 with perception_scale 0.0625 and generation_scale 4.0...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.0625, generation_scale=4.0)
+Start LLaVa inference...
+self.n_replica:  1
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 314, in <module>
+    profile_data = llava_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/llava_inference/inference.py", line 512, in llava_run
+    e = LLaVa_engine()
+  File "/workspace/xformers/playground/llava_inference/inference.py", line 45, in __init__
+    llm = llama(scaling=args.generation_scale).to("cuda")
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1340, in to
+    return self._apply(convert)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  [Previous line repeated 4 more times]
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 927, in _apply
+    param_applied = fn(param)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1326, in convert
+    return t.to(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 128.00 MiB. GPU 0 has a total capacity of 23.64 GiB of which 60.38 MiB is free. Process 467166 has 23.56 GiB memory in use. Of the allocated memory 23.17 GiB is allocated by PyTorch, and 15.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with perception_scale 0.0625 and generation_scale 4.0...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='seq', req_interval=0.1362, model='llava', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_seq.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=1, input_img_size=96, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=66, input_dim=2, cond_dim=66, n_emb=256, global_cond_dim=132, perception_scale=0.0625, generation_scale=4.0)
+Start LLaVa inference...
+self.n_replica:  1
+Traceback (most recent call last):
+  File "/workspace/xformers/playground/sche_plan.py", line 314, in <module>
+    profile_data = llava_run(sche_plan = sche_plan, mode = args.mode)
+  File "/workspace/xformers/playground/llava_inference/inference.py", line 512, in llava_run
+    e = LLaVa_engine()
+  File "/workspace/xformers/playground/llava_inference/inference.py", line 45, in __init__
+    llm = llama(scaling=args.generation_scale).to("cuda")
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1340, in to
+    return self._apply(convert)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  [Previous line repeated 4 more times]
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 927, in _apply
+    param_applied = fn(param)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1326, in convert
+    return t.to(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 128.00 MiB. GPU 0 has a total capacity of 23.64 GiB of which 60.38 MiB is free. Process 470946 has 23.56 GiB memory in use. Of the allocated memory 23.17 GiB is allocated by PyTorch, and 15.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Iteration 2 completed.
+--------------------------------------
+All iterations are complete. Output saved to llava_perception_0_0625_generation_4_0_seq.log.
+Average Query Duration: -nan ms (0.00000000 seconds)
+Throughput: Infinite (duration zero)

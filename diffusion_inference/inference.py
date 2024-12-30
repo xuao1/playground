@@ -73,8 +73,12 @@ class Diffusion_engine:
                 global_cond_dim=args.global_cond_dim
             ).to(torch.bfloat16).to("cuda")
         
-        print("Perception params: %e" % sum(p.numel() for p in resnet.parameters()))
-        print("Generation params: %e" % sum(p.numel() for p in backbone.parameters()))
+        former_img_bs = float(int(args.input_img_num*obs_num))
+        real_img_bs = float(int(args.input_img_num*obs_num*args.perception_scale))
+        perception_params = sum(p.numel() for p in resnet.parameters()) / former_img_bs * real_img_bs
+        print("Perception params: %e" % perception_params)
+        generation_params = sum(p.numel() for p in backbone.parameters()) * float(args.diffusion_step)
+        print("Generation params: %e" % generation_params)
 
         self.models = {'resnet': resnet,
                        'backbone': backbone}

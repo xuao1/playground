@@ -1,0 +1,109 @@
+Running iteration 1 with perception_scale 0.0625 and generation_scale 4.0...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=0.0625, generation_scale=4.0)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd']
+12
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 489
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd']
+12
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 1
+(8, 7, 6, 5, 4, 3, 2, 1, 0): 1
+(9, 8, 7, 6, 5, 4, 3, 2, 1, 0): 1
+(10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0): 1
+(11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0): 489
+Start DiffusionPolicy inference...
+Perception params: 0.000000e+00
+Generation params: 3.223635e+10
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Duration of graphs:  85.92076873779297
+Frame interval: 0.0860 s
+Throughput: 11.631
+DiffusionPolicy inference finished.
+Iteration 1 completed.
+--------------------------------------
+Running iteration 2 with perception_scale 0.0625 and generation_scale 4.0...
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:439: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+/workspace/xformers/playground/../../repos/x-transformers/x_transformers/x_transformers.py:461: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @autocast(enabled = False)
+Namespace(query_interval=1, input_seq_len=8, encoder_n=1, prefill_n=1, decode_n=1, encoder_len=1, prefill_len=1, decode_len=10, simu_ts_len=500, real_run=True, enable_recompute=False, mode='ours', req_interval=0.1362, model='diffusion_transformer', dim=512, enable_slice=False, warmup_num=10, trail_num=20, profile_mode='flashinfer', only_profile=False, num_trails=200, worker_num=3, verbose=0, config='./config_ours.yaml', diffusion_step=100, diffusion_stage_num=5, input_img_num=4, input_img_size=84, input_traj_cnn_size=16, input_traj_transformer_size=10, input_cond_size=274, input_dim=20, cond_dim=274, n_emb=768, global_cond_dim=548, perception_scale=0.0625, generation_scale=4.0)
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd']
+12
+---------
+('e',): 1
+('p', 'e'): 1
+('d', 'p', 'e'): 1
+('d', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 1
+('d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'p', 'e'): 489
+['e', 'p', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd']
+12
+---------
+(0,): 1
+(1, 0): 1
+(2, 1, 0): 1
+(3, 2, 1, 0): 1
+(4, 3, 2, 1, 0): 1
+(5, 4, 3, 2, 1, 0): 1
+(6, 5, 4, 3, 2, 1, 0): 1
+(7, 6, 5, 4, 3, 2, 1, 0): 1
+(8, 7, 6, 5, 4, 3, 2, 1, 0): 1
+(9, 8, 7, 6, 5, 4, 3, 2, 1, 0): 1
+(10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0): 1
+(11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0): 489
+Start DiffusionPolicy inference...
+Perception params: 0.000000e+00
+Generation params: 3.223635e+10
+====== Graph for resnet generated ======
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+Warning: /usr/local/lib/python3.10/dist-packages/torch/nn/modules/transformer.py changed
+====== Graph for backbone generated ======
+Duration of graphs:  86.16140747070312
+Frame interval: 0.0865 s
+Throughput: 11.559
+DiffusionPolicy inference finished.
+Iteration 2 completed.
+--------------------------------------
+All iterations are complete. Output saved to diffusion_transformer_perception_0_0625_generation_4_0_ours.log.
+Average Query Duration: 0.08625 s (0.08625000 seconds)
+Throughput: 11.59420289 requests/second
